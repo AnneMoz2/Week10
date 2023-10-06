@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/AnneMoz2/Datavis2/main/state%20area%20burned.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "aggregate": [
+          {"op": "sum", "field": "Native forest", "as": "Native Forest"},
+          {"op": "sum", "field": "Commercial plantation", "as": "Commercial Plantation"},
+          {"op": "sum", "field": "Other forest", "as": "Other Forest"}
+        ],
+        "groupby": ["State"]
+      },
+      {
+        "fold": ["Native Forest", "Commercial Plantation", "Other Forest"],
+        "as": ["Type of Forest", "Area Burned"]
+      }
+    ],
+    "selection": {
+      "ForestFilter": {
+        
+        "type": "single",
+        "fields": ["Type of Forest"],
+        "init": {"Type of Forest": "All"},
+        "bind": {
+          "input": "select",
+          "options": ["All", "Native Forest", "Commercial Plantation", "Other Forest"],
+          "name":"Type of forest: "
+        }
+      }
+    },
+    
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "State",
+        "type": "nominal",
+        "title": "State"
+      },
+      "y": {
+        "field": "Area Burned",
+        "type": "quantitative",
+        "title": "Total Area Burned"
+      },
+      "color": {
+        "field": "Type of Forest",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Native Forest", "Commercial Plantation", "Other Forest"],
+          "range": ["#1d91c0", "#0c2c84", "#c7e9b4"]
+        },
+        "title": "Type of Forest"
+      },
+      "opacity": {
+        "condition": {
+          "selection": "ForestFilter",
+          "value": 1
+        },
+        "value": 0.2
+      },
+      "tooltip":[
+        {"field": "Type of Forest", "title": "Forest Type"},
+        {"field": "Area Burned", "title": "Area Burned"}
+      ]
+    }
+  }
+  
