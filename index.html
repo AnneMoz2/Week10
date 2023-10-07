@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+
+
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     
@@ -17,14 +20,10 @@
 <body>
     <div class="page">
 
-
         <!-- pure grid group -->
         <div class="pure-g">
           <div class="pure-u-1-1">
-
             <h1 class="center-heading"> Blazing Fury: The impact of Wildfires and Bushfires in Australia</h1>
-            
-            
           </div>
         </div>
 <!--end pure grid group-->
@@ -32,14 +31,14 @@
 
 
 <!--pure grid group -->
-<div class="pure-g">
-    <div class="pure-u-1-2">
-        <div id="areastate" class="vis-container1"></div>
-    </div>   
-    <div class="pure-u-1-2">
-        <div id="map" class="vis-container2"></div>
-    </div>
-</div>
+      <div class="pure-g">
+          <div class="pure-u-1-2">
+              <div id="areastate" class="vis-container1"></div>
+          </div>   
+          <div class="pure-u-1-2">
+              <div id="map" class="vis-container2"></div>
+          </div>
+      </div>
 <!--end pure grid group-->
 
 
@@ -60,7 +59,7 @@
     .catch(console.warn);
 
     //chart 2 - Area per state based on forest type 
-    vegaEmbed("#areastate",spec2)
+    vegaEmbed("#areastate",spec2);
     //    result.view provides access to the Vega View API
     then(result=>console.log(result))
     .catch(console.warn);

@@ -7,20 +7,23 @@ p {
 .center {
     justify-content: center;
 }
+body{
+    background-color: black;
+}
 .page{
     width: 1000px;
-    background-color: white;
+    background-color: black;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
 }
 .vis-container1 {
     width: 200%;
-    height: 600px;
+    height: 400px;
 }
 .vis-container2 {
-    width: 30%;
-    height: 50%;
+    width: 10%;
+    height: 30%;
 }
 .description h2,
 h1 {
