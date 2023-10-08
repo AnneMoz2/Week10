@@ -34,7 +34,7 @@
                     "field": "frp",
                     "type": "quantitative",
                     "title": "Fire Radiative Power (MW)",
-                    "scale": {"scheme": "inferno"}
+                    "scale": {"scheme": "darkred"}
                 },
                 "tooltip": [
                     {"field": "frp", "type": "quantitative", "title": "Fire Radiative Power"},
