@@ -43,7 +43,7 @@
         "domain": ["Native Forest", "Commercial Plantation", "Other Forest"],
         "range": ["#1d91c0", "#0c2c84", "#c7e9b4"]
       },
-      "title": "Type of Forest"
+      "title": "Type of Forest:"
     },
     "opacity": {
       "condition": {
